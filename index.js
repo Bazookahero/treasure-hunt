@@ -32,11 +32,11 @@ function initChests(){
 localStorage.setItem("scoreTo", 0);
 var totalScore = 0;
 function initScoreBoard(plusScore){
-  console.log("scoreTo: ",  sessionStorage.getItem("scoreTo")) //scoreTo console test
+  //console.log("scoreTo: ",  sessionStorage.getItem("scoreTo")) //scoreTo console test
   totalScore = parseInt(sessionStorage.getItem("scoreTo")) | 0;
+  totalScore = parseInt(totalScore) + parseInt(plusScore);
   document.getElementById("score").innerHTML = "";
   document.getElementById("score").innerHTML = totalScore;
-  totalScore = parseInt(totalScore) + parseInt(plusScore);
   sessionStorage.setItem("scoreTo", totalScore);
 }
 
@@ -89,6 +89,10 @@ function chestClicked(num){
 
 
 function refresh(){
+}
+function reset(){
+  sessionStorage.setItem("scoreTo", 0);
+  location.reload();
 }
 
 function removeChestEvents(){ 

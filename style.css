@@ -61,3 +61,19 @@ body {
 #openChest1{height: 200px;margin-right: 20px}
 #openChest2{height: 200px;}
 #openChest3{height: 200px;margin-left: 20px}
+#reset-button:hover {
+  background-color: #2ecc71;
+}
+#reset-button{
+    width: 200px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 50px;
+  }
+
