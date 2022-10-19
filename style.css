@@ -57,7 +57,7 @@ body {
   background-color: #2ecc71;
 }
 #score{text-align: center; color: white;}
-#scorep{text-align: center;}
+#scorep{text-align: center;color: white;}
 #openChest1{height: 200px;margin-right: 20px}
 #openChest2{height: 200px;}
 #openChest3{height: 200px;margin-left: 20px}

@@ -1,11 +1,8 @@
-/*
-* Function that initiates the whole Game application.
-*/
 //import { createClient } from 'C:\Users\deltagare\Desktop\pexels\dist\main.js';
 //function getImageFromPexels(){
 //const client = createClient('563492ad6f9170000100000114141580c3c04d539189908bd3b0c145');
 //var x;
-//client.photos.show({ id: 3715989 }).then(photo => {x = photo.src.original});
+//client.photos.show({ id: 3715989 }).then(photo => {x = photo.src.small});
 //https://www.pexels.com/photo/macro-photography-of-sparkling-diamonds-3715989/
 //make a request towards pexels API and get 1 Diamond image
 //}
@@ -20,7 +17,7 @@ function randomChest(){
 }
 function initGameUI(){
   // Call functions that creates the Game UI
-  initScoreBoard();
+  initScoreBoard(0);
   var x = document.getElementById("openChest1");
   var y = document.getElementById("openChest2");
   var z = document.getElementById("openChest3");
@@ -32,15 +29,15 @@ function initGameUI(){
 function initChests(){
   
 }
-// localStorage.setItem("scoreTo", 0);
+localStorage.setItem("scoreTo", 0);
 var totalScore = 0;
-function initScoreBoard(){
-  console.log('scoreTo: ',  sessionStorage.getItem('scoreTo')) //scoreTo console test
-  totalscore = sessionStorage.getItem("scoreTo");
+function initScoreBoard(plusScore){
+  console.log("scoreTo: ",  sessionStorage.getItem("scoreTo")) //scoreTo console test
+  totalScore = parseInt(sessionStorage.getItem("scoreTo")) | 0;
   document.getElementById("score").innerHTML = "";
-  document.getElementById("score").innerHTML = "Your score: "+totalScore;
-  totalScore += 5;
-  sessionStorage.setItem('scoreTo', totalScore);
+  document.getElementById("score").innerHTML = totalScore;
+  totalScore = parseInt(totalScore) + parseInt(plusScore);
+  sessionStorage.setItem("scoreTo", totalScore);
 }
 
 function initRefreshButton(){
@@ -71,7 +68,8 @@ function removeChest(num){
 function chestClicked(num){
   if(num == Math.floor(Math.random()*3))
   {
-    initScoreBoard();
+    
+    initScoreBoard(5);
     removeChest(num);
     getImageFromPexels();
     placeTreassure();
