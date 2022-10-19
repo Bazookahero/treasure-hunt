@@ -1,0 +1,63 @@
+body {
+  background-color: #34495e;
+  padding-top: 20px;
+}
+
+#game-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: coral;
+  text-align: center;
+}
+
+#game-description {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2ecc71;
+  text-align: center;
+}
+
+#game-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#chests {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+#chest1{height: 150px;}
+#chest2{margin-left: 20px; height: 150px;}
+#chest3{margin-left: 20px;height: 150px;}
+#chest4{margin-left: 20px;height: 150px;}
+#chests button{
+  height: 150px;
+  background-color: #34495e;
+  border: none;
+  margin-left: 20px;
+}
+#refresh-button {
+  width: 200px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: auto;
+  cursor: pointer;
+}
+#chests button:hover {
+  background-color: #34495e;
+  cursor: pointer;
+}
+#refresh-button:hover {
+  background-color: #2ecc71;
+}
+#score{text-align: center; color: white;}
+#scorep{text-align: center;}
+#openChest1{height: 200px;margin-right: 20px}
+#openChest2{height: 200px;}
+#openChest3{height: 200px;margin-left: 20px}
