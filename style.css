@@ -76,4 +76,13 @@ body {
     cursor: pointer;
     margin-top: 50px;
   }
+  #photo1{
+    height: 200px;margin-right: 20px;
+  }
+  #photo2{
+    height: 200px;
+  }
+  #photo3{
+    height: 200px;margin-left: 20px;
+  }
 

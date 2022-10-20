@@ -24,6 +24,12 @@ function initGameUI(){
   x.style.display = "none";
   y.style.display = "none";
   z.style.display = "none";
+  var xz = document.getElementById("photo1");
+  var yz = document.getElementById("photo2");
+  var zz = document.getElementById("photo3");
+  xz.style.display = "none";
+  yz.style.display = "none";
+  zz.style.display = "none";
 }
 
 function initChests(){
@@ -57,9 +63,9 @@ function initChestEventListeners(){
   
 }
 
-function placeTreassure(){
-var z = document.getElementById("x");
-z.style.show
+function placeTreassure(num){
+var z = document.getElementById("photo"+num);
+z.style.display = "block";
 }
 function removeChest(num){
   document.getElementById("chest"+num).style.display = 'none';
@@ -68,11 +74,9 @@ function removeChest(num){
 function chestClicked(num){
   if(num == Math.floor(Math.random()*3))
   {
-    
     initScoreBoard(5);
     removeChest(num);
-    getImageFromPexels();
-    placeTreassure();
+    placeTreassure(num);
   }
   else
   {
@@ -85,6 +89,7 @@ function chestClicked(num){
   {
     var x = document.getElementById("openChest"+num);
     x.style.display = "block";
+    
   }
 
 
