@@ -78,7 +78,7 @@ function removeChest(num){
 }
 
 function chestClicked(num){
-  if(num == Math.floor(Math.random()*3))
+  if(num == Math.floor(Math.random()*3) +1)
   {
     initScoreBoard(5);
     removeChest(num);
