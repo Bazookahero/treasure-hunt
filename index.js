@@ -1,11 +1,15 @@
-//import { createClient } from 'C:\Users\deltagare\Desktop\pexels\dist\main.js';
-//function getImageFromPexels(){
-//const client = createClient('563492ad6f9170000100000114141580c3c04d539189908bd3b0c145');
-//var x;
-//client.photos.show({ id: 3715989 }).then(photo => {x = photo.src.small});
-//https://www.pexels.com/photo/macro-photography-of-sparkling-diamonds-3715989/
-//make a request towards pexels API and get 1 Diamond image
-//}
+function getImageFromPexels(num){
+let url = "https://api.pexels.com/v1/search?query=diamonds+query&per_page1&page=1";
+let xhr = new XMLHttpRequest();
+xhr.open('GET', url, true)
+xhr.setRequestHeader('Authorization', '563492ad6f9170000100000114141580c3c04d539189908bd3b0c145');
+xhr.send();
+xhr.addEventListener('load', function() {
+  let imagePexels = JSON.parse(this.response);
+  document.getElementById("photo"+num).src = imagePexels.photos[9].src.small;
+});
+//return e
+}
 function init(){
   initGameUI();
 }
@@ -65,6 +69,8 @@ function initChestEventListeners(){
 
 function placeTreassure(num){
 var z = document.getElementById("photo"+num);
+//tImageFromPexels(document.getElementById("photo"+num));
+//z.innerHTML = k;
 z.style.display = "block";
 }
 function removeChest(num){
@@ -76,6 +82,7 @@ function chestClicked(num){
   {
     initScoreBoard(5);
     removeChest(num);
+    getImageFromPexels(num)
     placeTreassure(num);
   }
   else
